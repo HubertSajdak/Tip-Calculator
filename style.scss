@@ -1,0 +1,47 @@
+$very-dark-cyan: hsl(183, 100%, 15%);
+$dark-grayish-cyan: hsl(186, 14%, 43%);
+$dark-grayish-cyan-2: hsl(184, 14%, 56%);
+$light-grayish-cyan: hsl(185, 41%, 84%);
+$light-grayish-cyan-2: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+$strong-cyan: hsl(172, 67%, 45%);
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: 'Space Mono', monospace;
+}
+
+body {
+}
+
+.wrapper {
+	text-align: center;
+	background-color: $dark-grayish-cyan-2;
+	.app-background {
+		display: flex;
+		flex-direction: column;
+		background-color: $white;
+		border-radius: 10px;
+	}
+}
+.selected {
+	background-color: $strong-cyan;
+	color: black;
+}
+.cstm-input {
+	height: 100%;
+	width: 1000%;
+	background-color: $white;
+	font-family: 'Space Mono', monospace;
+	font-size: 1.3rem;
+	font-weight: bold;
+	text-align: right;
+}
+
+@import '_small.scss';

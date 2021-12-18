@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>Spli<br>tter</h1>
+    <div class="app-background">
+      <div class="bill-container">
+        <label for="bill">Bill</label>
+        <input type="number" id="bill" placeholder="0" style="padding: 1rem;">
+      </div>
+      <div class="tip-container">
+        <p class="tip-name">Select Tip %</p>
+        <div class="tip-btns">
+          <div class="btn" data-value='0.05'>5%</div>
+          <div class="btn" data-value="0.10">10%</div>
+          <div class="btn selected" data-value="0.15">15%</div>
+          <div class="btn" data-value="0.25">25%</div>
+          <div class="btn" data-value="0.5">50%</div>
+          <input class="btn" placeholder="Custom"
+            style="text-align: center; font-family: 'Space Mono', monospace; background-color: hsl(189, 41%, 97%)"
+            onchange="tipHandler()">
+          </>
+        </div>
+
+      </div>
+      <div class="people-container">
+        <div class="people-text">
+          <label for="people-number">Number of People</label>
+          <!-- <p class="error-msg">Can't be zero</p> -->
+        </div>
+        <input type="number" id="people-number" placeholder="0" style="padding: 1rem;">
+      </div>
+
+
+      <div class="result-container">
+        <div class="tip-result">
+          <p class="tip-title">Tip Amount <br> <span>/person</span></p>
+          <p class="tip-amount">$<span>0.00</span></p>
+        </div>
+        <div class="total-result">
+          <p class="total-title">Total <br><span>/person</span></p>
+          <p class="total-amount">$<span>0.00</span></p>
+        </div>
+
+        <button class="reset-btn">Calculate</button>
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <script src="/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Space Mono', monospace;
+}
+
+.wrapper {
+  text-align: center;
+  background-color: #7f9c9f;
+}
+
+.wrapper .app-background {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.selected {
+  background-color: #26c0ab;
+  color: black;
+}
+
+.cstm-input {
+  height: 100%;
+  width: 1000%;
+  background-color: white;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: right;
+}
+
+@media (max-width: 375px) {
+  .wrapper {
+    text-align: center;
+    background-color: #c5e4e7;
+    height: 100vh;
+  }
+  .wrapper h1 {
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+    padding: 4rem;
+  }
+  .wrapper .app-background {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 20px;
+  }
+  .wrapper .app-background .bill-container {
+    font-size: 1.3rem;
+    text-align: left;
+    font-weight: bold;
+  }
+  .wrapper .app-background .bill-container #bill {
+    font-family: 'Space Mono', monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: right;
+    width: 100%;
+    height: 4rem;
+    color: #00494d;
+    background: url(/images/icon-dollar.svg) no-repeat #f4fafa left;
+  }
+  .wrapper .app-background .tip-container {
+    padding-top: 2rem;
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+  .wrapper .app-background .tip-container .tip-btns {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+  .wrapper .app-background .tip-container .tip-btns .btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0.7rem 0;
+    background-color: #00494d;
+    height: 45px;
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .wrapper .app-background .tip-container .tip-btns .btn:last-child {
+    color: #5e7a7d;
+    background-color: #f4fafa;
+  }
+  .wrapper .app-background .tip-container .tip-btns .selected {
+    background-color: #26c0ab;
+    color: black;
+  }
+  .wrapper .app-background .people-container {
+    padding-top: 2rem;
+  }
+  .wrapper .app-background .people-container .people-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  .wrapper .app-background .people-container #people-number {
+    font-family: 'Space Mono', monospace;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 4rem;
+    width: 100%;
+    text-align: right;
+    background: url(/images/icon-person.svg) no-repeat #f4fafa left;
+  }
+  .wrapper .app-background .result-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+    background-color: #00494d;
+  }
+  .wrapper .app-background .result-container .tip-result,
+  .wrapper .app-background .result-container .total-result {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .wrapper .app-background .result-container .tip-result .tip-title,
+  .wrapper .app-background .result-container .tip-result .total-title,
+  .wrapper .app-background .result-container .total-result .tip-title,
+  .wrapper .app-background .result-container .total-result .total-title {
+    padding-bottom: 2rem;
+    font-size: 1.3rem;
+    color: white;
+    text-align: left;
+  }
+  .wrapper .app-background .result-container .tip-result .tip-title span,
+  .wrapper .app-background .result-container .tip-result .total-title span,
+  .wrapper .app-background .result-container .total-result .tip-title span,
+  .wrapper .app-background .result-container .total-result .total-title span {
+    color: #7f9c9f;
+  }
+  .wrapper .app-background .result-container .tip-result .tip-amount,
+  .wrapper .app-background .result-container .tip-result .total-amount,
+  .wrapper .app-background .result-container .total-result .tip-amount,
+  .wrapper .app-background .result-container .total-result .total-amount {
+    color: #26c0ab;
+    font-size: 3rem;
+  }
+  .wrapper .app-background .result-container .reset-btn {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    width: 100%;
+    padding: 1rem;
+    font-weight: bold;
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+    background-color: #26c0ab;
+    border: none;
+    border-radius: 6px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
