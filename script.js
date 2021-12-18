@@ -41,7 +41,7 @@ const calculateTip = () => {
 		customTip.style.border = '1px solid black'
 		customTip.style.backgroundColor = 'hsl(189, 41%, 97%)'
 	}
-	if (customTip.value === '') {
+	if (customTip.value === '' && customTip.classList.contains('selected')) {
 		customTip.placeholder = `empty`
 		customTip.style.border = '1px solid tomato'
 		customTip.style.backgroundColor = 'tomato'
