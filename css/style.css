@@ -49,6 +49,7 @@ html {
   border-radius: 10px;
   padding: 2rem;
   width: 70%;
+  max-width: 800px;
 }
 
 .wrapper .app-background .bill-container,
@@ -72,6 +73,7 @@ html {
   font-size: 1.2rem;
   font-weight: bold;
   text-align: left;
+  width: 100%;
 }
 
 .wrapper .app-background .bill-container #bill {
@@ -313,7 +315,7 @@ html {
     width: 100%;
     height: 4rem;
     color: #00494d;
-    background: url(/images/icon-dollar.svg) no-repeat #f4fafa left;
+    background: url(./images/icon-dollar.svg) no-repeat #f4fafa left;
   }
   .wrapper .app-background .tip-container {
     padding-top: 2rem;
@@ -375,7 +377,7 @@ html {
     height: 4rem;
     width: 100%;
     text-align: right;
-    background: url(/images/icon-person.svg) no-repeat #f4fafa left;
+    background: url(./images/icon-person.svg) no-repeat #f4fafa left;
   }
   .wrapper .app-background .result-container {
     display: -webkit-box;
