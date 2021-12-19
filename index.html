@@ -32,7 +32,7 @@
           <div class="btn selected" data-value="0.15">15%</div>
           <div class="btn" data-value="0.25">25%</div>
           <div class="btn" data-value="0.5">50%</div>
-          <input class="btn" placeholder="Custom"
+          <input type="number" maxlength="2" max="99" class="btn" placeholder="Custom"
             style="text-align: center; font-family: 'Space Mono', monospace; background-color: hsl(189, 41%, 97%)"
             onchange="tipHandler()">
           </>
@@ -42,7 +42,7 @@
       <div class="people-container">
         <div class="people-text">
           <label for="people-number">Number of People</label>
-          <!-- <p class="error-msg">Can't be zero</p> -->
+          <p class="error-msg">Can't be zero</p>
         </div>
         <input type="number" id="people-number" placeholder="0" style="padding: 1rem;">
       </div>

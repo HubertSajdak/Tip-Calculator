@@ -1,12 +1,16 @@
-@media (max-width: 375px) {
+@media (max-width: 768px) {
 	.wrapper {
 		text-align: center;
 		background-color: $light-grayish-cyan;
 		height: 100vh;
+		min-height: 700px;
 		h1 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			letter-spacing: 1rem;
 			text-transform: uppercase;
-			padding: 4rem;
+			margin-top: 4rem;
 		}
 		.app-background {
 			display: flex;
@@ -14,10 +18,13 @@
 			padding: 2rem;
 			background-color: $white;
 			border-radius: 20px;
+			width: 100%;
+			max-width: 500px;
 			.bill-container {
 				font-size: 1.3rem;
 				text-align: left;
 				font-weight: bold;
+				width: 100%;
 				#bill {
 					font-family: 'Space Mono', monospace;
 					font-size: 2rem;
@@ -67,6 +74,7 @@
 			}
 			.people-container {
 				padding-top: 2rem;
+				width: 100%;
 				.people-text {
 					display: flex;
 					justify-content: space-between;
@@ -125,6 +133,7 @@
 					background-color: $strong-cyan;
 					border: none;
 					border-radius: 6px;
+					cursor: pointer;
 				}
 			}
 		}

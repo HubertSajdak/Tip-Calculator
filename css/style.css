@@ -11,11 +11,6 @@ html {
 }
 
 .wrapper {
-  text-align: center;
-  background-color: #7f9c9f;
-}
-
-.wrapper .app-background {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,16 +18,243 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: white;
-  border-radius: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #c5e4e7;
 }
 
-.selected {
+.wrapper h1 {
+  color: #00494d;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  padding: 4rem;
+}
+
+.wrapper .app-background {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  gap: 1.6rem;
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 70%;
+}
+
+.wrapper .app-background .bill-container,
+.wrapper .app-background .tip-container,
+.wrapper .app-background .people-container,
+.wrapper .app-background .result-container {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.wrapper .app-background .bill-container {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+.wrapper .app-background .bill-container #bill {
+  font-family: 'Space Mono', monospace;
+  text-align: right;
+  font-size: 2rem;
+  height: 3.4rem;
+  width: 100%;
+  font-weight: bold;
+  color: #00494d;
+  background-color: #f4fafa;
+  border: none;
+}
+
+.wrapper .app-background .tip-container {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-rows: 2/3;
+      grid-template-rows: 2/3;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.wrapper .app-background .tip-container .tip-btns {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.wrapper .app-background .tip-container .tip-btns .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 0.5rem 0;
+  background-color: #00494d;
+  height: 35px;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
+.wrapper .app-background .tip-container .tip-btns .btn:last-child {
+  color: #00494d;
+  border: none;
+}
+
+.wrapper .app-background .tip-container .tip-btns .selected {
   background-color: #26c0ab;
   color: black;
 }
 
-.cstm-input {
+.wrapper .app-background .people-container {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+  width: 100%;
+}
+
+.wrapper .app-background .people-container .people-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+.wrapper .app-background .people-container .people-text .error-msg {
+  display: none;
+}
+
+.wrapper .app-background .people-container #people-number {
+  font-family: 'Space Mono', monospace;
+  font-size: 2rem;
+  height: 3.4rem;
+  text-align: right;
+  font-weight: bold;
+  width: 100%;
+  color: #00494d;
+  border: none;
+  background-color: #f4fafa;
+}
+
+.wrapper .app-background .people-container #people-number:focus {
+  border: 1px solid #00494d;
+}
+
+.wrapper .app-background .result-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  grid-row: 1/4;
+  background-color: #00494d;
+  height: 100%;
+  padding: 1.5rem;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid transparent;
+}
+
+.wrapper .app-background .result-container .tip-result,
+.wrapper .app-background .result-container .total-result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 0.3rem;
+  padding: 2rem 0;
+  color: white;
+  text-align: left;
+}
+
+.wrapper .app-background .result-container .tip-result .tip-amount,
+.wrapper .app-background .result-container .tip-result .total-amount,
+.wrapper .app-background .result-container .total-result .tip-amount,
+.wrapper .app-background .result-container .total-result .total-amount {
+  font-size: 3rem;
+  text-align: left;
+  color: #26c0ab;
+}
+
+.wrapper .app-background .result-container .tip-result .tip-amount span,
+.wrapper .app-background .result-container .tip-result .total-amount span,
+.wrapper .app-background .result-container .total-result .tip-amount span,
+.wrapper .app-background .result-container .total-result .total-amount span {
+  color: #26c0ab;
+}
+
+.wrapper .app-background .result-container .tip-result span,
+.wrapper .app-background .result-container .total-result span {
+  color: #5e7a7d;
+}
+
+.wrapper .app-background .result-container .reset-btn {
+  padding: 1rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: auto;
+  margin-bottom: 2rem;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Space Mono', monospace;
+  border: none;
+  border-radius: 6px;
+  background-color: #26c0ab;
+  cursor: pointer;
+}
+
+.wrapper .selected {
+  background-color: #26c0ab;
+  color: black;
+}
+
+.wrapper .cstm-input {
   height: 100%;
   width: 1000%;
   background-color: white;
@@ -42,16 +264,26 @@ html {
   text-align: right;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 768px) {
   .wrapper {
     text-align: center;
     background-color: #c5e4e7;
     height: 100vh;
+    min-height: 700px;
   }
   .wrapper h1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     letter-spacing: 1rem;
     text-transform: uppercase;
-    padding: 4rem;
+    margin-top: 4rem;
   }
   .wrapper .app-background {
     display: -webkit-box;
@@ -64,11 +296,14 @@ html {
     padding: 2rem;
     background-color: white;
     border-radius: 20px;
+    width: 100%;
+    max-width: 500px;
   }
   .wrapper .app-background .bill-container {
     font-size: 1.3rem;
     text-align: left;
     font-weight: bold;
+    width: 100%;
   }
   .wrapper .app-background .bill-container #bill {
     font-family: 'Space Mono', monospace;
@@ -121,6 +356,7 @@ html {
   }
   .wrapper .app-background .people-container {
     padding-top: 2rem;
+    width: 100%;
   }
   .wrapper .app-background .people-container .people-text {
     display: -webkit-box;
@@ -202,6 +438,7 @@ html {
     background-color: #26c0ab;
     border: none;
     border-radius: 6px;
+    cursor: pointer;
   }
 }
 /*# sourceMappingURL=style.css.map */

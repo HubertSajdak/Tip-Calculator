@@ -17,31 +17,189 @@ html {
 	font-family: 'Space Mono', monospace;
 }
 
-body {
-}
-
 .wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
-	background-color: $dark-grayish-cyan-2;
+	height: 100vh;
+	width: 100vw;
+	background-color: $light-grayish-cyan;
+	h1 {
+		color: $very-dark-cyan;
+		text-transform: uppercase;
+		letter-spacing: 1rem;
+		padding: 4rem;
+	}
 	.app-background {
-		display: flex;
-		flex-direction: column;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		gap: 1.6rem;
 		background-color: $white;
 		border-radius: 10px;
+		// margin: 4rem auto;
+		padding: 2rem;
+		width: 70%;
+		// max-height: 300px;
+
+		.bill-container,
+		.tip-container,
+		.people-container,
+		.result-container {
+			justify-self: center;
+			align-self: center;
+		}
+		.bill-container {
+			grid-column: 1/2;
+			grid-row: 1/2;
+			font-size: 1.2rem;
+			font-weight: bold;
+			text-align: left;
+			#bill {
+				font-family: 'Space Mono', monospace;
+				text-align: right;
+				font-size: 2rem;
+				height: 3.4rem;
+				width: 100%;
+				font-weight: bold;
+				color: $very-dark-cyan;
+				background-color: $light-grayish-cyan-2;
+				border: none;
+			}
+		}
+		.tip-container {
+			grid-column: 1/2;
+			grid-template-rows: 2/3;
+			text-align: left;
+			font-size: 1.2rem;
+			font-weight: bold;
+			.tip-btns {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 1rem;
+				.btn {
+					display: flex;
+					justify-content: center;
+					color: $white;
+					font-size: 1.6rem;
+					font-weight: bold;
+					padding: 0.5rem 0;
+					background-color: $very-dark-cyan;
+					height: 35px;
+					width: 100%;
+					border-radius: 6px;
+					cursor: pointer;
+					border: none;
+
+					&:last-child {
+						color: $very-dark-cyan;
+						border: none;
+					}
+				}
+				.selected {
+					background-color: $strong-cyan;
+					color: black;
+				}
+			}
+		}
+		.people-container {
+			grid-column: 1/2;
+			grid-row: 3/4;
+			width: 100%;
+			.people-text {
+				font-size: 1.2rem;
+				font-weight: bold;
+				text-align: left;
+				.error-msg {
+					display: none;
+				}
+			}
+
+			#people-number {
+				font-family: 'Space Mono', monospace;
+				font-size: 2rem;
+				height: 3.4rem;
+				text-align: right;
+				font-weight: bold;
+				width: 100%;
+				color: $very-dark-cyan;
+				border: none;
+
+				background-color: $light-grayish-cyan-2;
+
+				&:focus {
+					border: 1px solid $very-dark-cyan;
+				}
+			}
+		}
+
+		.result-container {
+			display: flex;
+			flex-direction: column;
+			grid-column: 2/3;
+			grid-row: 1/4;
+			background-color: $very-dark-cyan;
+			height: 100%;
+			padding: 1.5rem;
+			width: 100%;
+			border-radius: 12px;
+			border: 1px solid transparent;
+			.tip-result,
+			.total-result {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				font-size: 1.2rem;
+				font-weight: bold;
+				margin-top: 0.3rem;
+				padding: 2rem 0;
+				color: $white;
+				text-align: left;
+				.tip-amount,
+				.total-amount {
+					font-size: 3rem;
+					text-align: left;
+					color: $strong-cyan;
+
+					span {
+						color: $strong-cyan;
+					}
+				}
+				span {
+					color: $dark-grayish-cyan;
+				}
+			}
+
+			.reset-btn {
+				padding: 1rem;
+				align-self: center;
+				margin-top: auto;
+				margin-bottom: 2rem;
+				width: 100%;
+				text-transform: uppercase;
+				font-weight: bold;
+				font-family: 'Space Mono', monospace;
+				border: none;
+				border-radius: 6px;
+				background-color: $strong-cyan;
+				cursor: pointer;
+			}
+		}
+	}
+	.selected {
+		background-color: $strong-cyan;
+		color: black;
+	}
+	.cstm-input {
+		height: 100%;
+		width: 1000%;
+		background-color: $white;
+		font-family: 'Space Mono', monospace;
+		font-size: 1.3rem;
+		font-weight: bold;
+		text-align: right;
 	}
 }
-.selected {
-	background-color: $strong-cyan;
-	color: black;
-}
-.cstm-input {
-	height: 100%;
-	width: 1000%;
-	background-color: $white;
-	font-family: 'Space Mono', monospace;
-	font-size: 1.3rem;
-	font-weight: bold;
-	text-align: right;
-}
-
 @import '_small.scss';
