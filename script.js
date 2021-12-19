@@ -67,6 +67,15 @@ const customMax = e => {
 	}
 }
 
+const preventNumbers = params => {
+	if (billInput.value < 0) {
+		billInput.value = 0
+	}
+	if (peopleInput.value < 0) {
+		peopleInput.value = 0
+	}
+}
+
 resetBtn.addEventListener('click', calculateTip)
 
 btns.forEach(btn => btn.addEventListener('click', activeHandler))
@@ -74,3 +83,5 @@ btns.forEach(btn => btn.addEventListener('click', tipHandler))
 billInput.addEventListener('input', billHandler)
 peopleInput.addEventListener('input', peopleHandler)
 customTip.addEventListener('input', customMax)
+billInput.addEventListener('input', preventNumbers)
+peopleInput.addEventListener('input', preventNumbers)
